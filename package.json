@@ -1,0 +1,30 @@
+{
+  "name": "protoc-gen-salesforce-apex-runner-container",
+  "version": "1.0.0",
+  "description": "A dedicated Docker container setup that publishes images for the development and CI/CD of 'protoc-gen-salesforce-apex' project, ensuring consistent environments across all stages of development.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dclappert/protoc-gen-salesforce-apex-runner-container.git"
+  },
+  "author": "dclappert@gmail.com",
+  "private": true,
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/dclappert/protoc-gen-salesforce-apex-runner-container/issues"
+  },
+  "homepage": "https://github.com/dclappert/protoc-gen-salesforce-apex-runner-container#readme",
+  "devDependencies": {
+    "@semantic-release/exec": "^6.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "semantic-release": "^15.14.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
