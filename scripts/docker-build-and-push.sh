@@ -1,4 +1,13 @@
-docker build -t ${process.env.DOCKER_HUB_USERNAME}/yourimage:${nextRelease.version} . \
-&& echo ${process.env.DOCKER_HUB_ACCESS_TOKEN} \
-| docker login -u ${process.env.DOCKER_HUB_USERNAME} --password-stdin \
-&& docker push ${process.env.DOCKER_HUB_USERNAME}/yourimage:${nextRelease.version}
+#!/bin/bash
+
+VERSION=$1
+IMAGE_NAME="ghcr.io/dclappert/protoc-gen-salesforce-apex-runner-container"
+
+# Build the Docker image
+docker build . --file ../Dockerfile --tag $IMAGE_NAME:$VERSION
+
+# Login to GitHub Content Registry
+echo $GITHUB_TOKEN | docker login ghcr.io -u $ --password-stdin
+
+# Push the Docker image
+docker push $IMAGE_NAME:$VERSION
